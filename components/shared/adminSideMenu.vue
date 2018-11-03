@@ -24,6 +24,7 @@
           v-for="item in items"
           :key="item.title"
           :to="item.link"
+          exact
           nuxt>
 
           <v-list-tile-action>
@@ -50,8 +51,9 @@
       return {
         drawer: null,
         items: [
-        { title: 'Account', link: '/users', icon: 'person' },
-        { title: 'Posts', link: '/posts', icon: 'list_alt' },
+        { title: 'Account', link: '/admin', icon: 'person' },
+        { title: 'Posts', link: '/admin/posts', icon: 'list_alt' },
+        { title: 'New Post', link: '/admin/posts/new-post', icon: 'supervisor_account' }
         ]
       }
     }

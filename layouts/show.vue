@@ -4,9 +4,7 @@
     <side-menu/>
 
     <v-content>
-      <v-container>
-        <nuxt />
-      </v-container>
+      <nuxt />
     </v-content>
 
     <app-footer />

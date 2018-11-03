@@ -21,11 +21,17 @@
 
     </v-toolbar>
     <nuxt />
+    <app-footer
+      footer-color="blue darken-4" />
   </v-app>
 </template>
 
 <script>
+  import appFooter from '~/components/shared/appFooter'
   export default {
+    components: {
+      appFooter
+    },
     data() {
       return {
         navigationLinks: [

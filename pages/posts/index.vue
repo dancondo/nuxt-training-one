@@ -1,9 +1,24 @@
 <template>
   <div>
-    <h1>All Posts</h1>
+    <h1 class="ma-3">All Posts</h1>
+    <v-layout
+      row
+      wrap>
+
+      <post-preview
+        v-for="n in 3"
+        :id="n"
+        :key="n"/>
+
+    </v-layout>
   </div>
 </template>
 
 <script>
-
+  import postPreview from '~/components/posts/preview'
+  export default {
+    components: {
+      postPreview
+    }
+  };
 </script>

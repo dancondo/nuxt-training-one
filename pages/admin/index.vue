@@ -1,5 +1,7 @@
 <template>
   <div>
-    <h1>Admin Index</h1>
+    <h1>Bacon</h1>
   </div>
 </template>
+<script>
+</script>
