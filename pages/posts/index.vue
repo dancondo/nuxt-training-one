@@ -6,7 +6,7 @@
       wrap>
 
       <post-preview
-        v-for="n in 3"
+        v-for="n in posts"
         :id="n"
         :key="n"/>
 
@@ -19,6 +19,11 @@
   export default {
     components: {
       postPreview
+    },
+    computed: {
+      posts() {
+        return this.$store.getters['posts/getPost']
+      }
     }
   };
 </script>

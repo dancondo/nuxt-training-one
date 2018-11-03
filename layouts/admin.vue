@@ -1,7 +1,8 @@
 <template>
   <v-app>
 
-    <side-menu/>
+    <side-menu
+      :items="items"/>
 
     <v-content>
       <v-container>
@@ -14,7 +15,7 @@
 </template>
 
 <script>
-  import sideMenu from '~/components/shared/adminSideMenu'
+  import sideMenu from '~/components/shared/sideMenu'
   import appFooter from '~/components/shared/appFooter'
   export default {
     components: {
@@ -23,6 +24,11 @@
     },
     data() {
       return {
+        items: [
+          { title: 'Account', link: '/admin', icon: 'person' },
+          { title: 'Posts', link: '/admin/posts', icon: 'list_alt' },
+          { title: 'New Post', link: '/admin/posts/new-post', icon: 'supervisor_account' }
+        ]
       }
     }
   };

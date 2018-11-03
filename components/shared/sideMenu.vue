@@ -46,13 +46,15 @@
 
 <script>
   export default {
+    props: {
+      items: {
+        type: Array,
+        default: null
+      }
+    },
     data() {
       return {
         drawer: null,
-        items: [
-        { title: 'Account', link: '/users', icon: 'person' },
-        { title: 'Posts', link: '/posts', icon: 'list_alt' },
-        ]
       }
     }
   };

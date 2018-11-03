@@ -1,7 +1,8 @@
 <template>
   <v-app>
 
-    <side-menu/>
+    <side-menu
+      :items="items"/>
 
     <v-content>
       <v-container>
@@ -23,6 +24,10 @@
     },
     data() {
       return {
+        items: [
+          { title: 'Account', link: '/users', icon: 'person' },
+          { title: 'Posts', link: '/posts', icon: 'list_alt' },
+        ]
       }
     }
   };
