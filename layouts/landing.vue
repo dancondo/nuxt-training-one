@@ -10,7 +10,7 @@
 
         <v-btn
           v-for="item in navigationLinks"
-          :key="item"
+          :key="item.name"
           :to="item.link"
           nuxt
           flat>

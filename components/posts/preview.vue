@@ -23,7 +23,7 @@
           flat
           color="orange"
         >
-          See
+          See more
         </v-btn>
       </v-card-actions>
     </v-card>

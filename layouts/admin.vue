@@ -27,7 +27,7 @@
         items: [
           { title: 'Account', link: '/admin', icon: 'person' },
           { title: 'Posts', link: '/admin/posts', icon: 'list_alt' },
-          { title: 'New Post', link: '/admin/posts/new-post', icon: 'supervisor_account' }
+          { title: 'New Post', link: '/admin/posts/new-post', icon: 'note_add' }
         ]
       }
     }

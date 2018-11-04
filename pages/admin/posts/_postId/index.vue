@@ -1,7 +1,13 @@
 <template>
   <div>
-    <h1>
-      Hello
-    </h1>
+    <show/>
   </div>
 </template>
+<script>
+  import show from '~/components/posts/show'
+  export default {
+    components: {
+      show
+    }
+  };
+</script>
