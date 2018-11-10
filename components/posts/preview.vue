@@ -11,9 +11,9 @@
       />
 
       <v-card-title>
-        <div>
-          <span class="grey--text">{{ post.title }}</span><br>
-          <span>{{ post.content }}</span><br>
+        <div class="text-truncate">
+          <p class="grey--text">{{ post.title }}</p>
+          <p>{{ post.content }}</p>
         </div>
       </v-card-title>
       <v-card-actions>

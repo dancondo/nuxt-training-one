@@ -20,6 +20,7 @@
     asyncData(context) {
       return context.$axios.get('v1/posts')
         .then(response => {
+          console.log(response)
           return { posts: response.data.posts }
         })
         .catch(e => context.error(e))

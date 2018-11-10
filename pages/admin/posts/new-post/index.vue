@@ -23,7 +23,7 @@
       savePost(postData) {
         this.$axios.$post('/v1/posts/', postData)
           .then(response => {
-            this.$router.push('admin/posts/' + response.id)
+            this.$router.push('/admin/posts/' + response.id)
           })
       }
     }

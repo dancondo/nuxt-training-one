@@ -5,7 +5,7 @@
       wrap>
       <v-flex
         xs12
-        sm3
+        sm4
         order-sm2>
         <v-img
           v-if="post.file.url"
@@ -15,7 +15,7 @@
       </v-flex>
       <v-flex
         xs12
-        sm9>
+        sm8>
         <v-card-text>
           <h5 class="display-1 mb-3">
             {{ post.title }}
@@ -26,6 +26,28 @@
             {{ post.content }}
           </p>
         </v-card-text>
+      </v-flex>
+      <v-flex
+        xs12
+        order-xs3
+        class="grey lighten-4">
+        <v-card-actions>
+          <v-btn
+            v-if="$auth.loggedIn && $auth.user.admin"
+            :nuxt="true"
+            :to="'/admin/posts/' + post.id + '/edit'"
+            flat
+            color="light-blue">
+            Edit
+          </v-btn>
+          <v-btn
+            v-if="$auth.loggedIn && $auth.user.admin"
+            :nuxt="true"
+            flat
+            @click="remove()">
+            Delete
+          </v-btn>
+        </v-card-actions>
       </v-flex>
     </v-layout>
   </v-card>
@@ -46,6 +68,19 @@
         }
       }
     },
+    methods: {
+      remove() {
+        if (confirm('Are you sure?')) {
+          this.$axios.$delete('v1/posts/' + this.$route.params.postId)
+            .then(response =>{
+              this.$router.push('/admin/posts');
+            })
+            .catch(error => {
+              this.error(error)
+            })
+        }
+      }
+    }
   };
 
 </script>
