@@ -9,13 +9,11 @@ export const mutations = {
 
 export const actions = {
   authenticateUser({ commit }, authData) {
-    if(authData.passwordConfimation) {
-      this.$auth.signUp(authData)
-        .catch(error => this.error = error + '')
-    } else {
-      console.log(authData)
-      this.$auth.login({data: { ...authData }})
+    if(authData.user.passwordConfimation) {
+      this.$axios.post('/users/', { ...authData })
         .catch(error => this.error = error + '')
     }
+    this.$auth.login({data: { ...authData }})
+      .catch(error => this.error = error + '')
   }
 };

@@ -13,6 +13,9 @@
           return { post: response.post }
         })
       ;
+    },
+    head: {
+      title: 'A Blog Post'
     }
   };
 </script>

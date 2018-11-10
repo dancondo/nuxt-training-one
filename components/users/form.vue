@@ -72,7 +72,6 @@
         this.signUp = !this.signUp
       },
       submitForm() {
-        console.log(this.user)
         this.$emit('logUser', this.user)
       }
     }

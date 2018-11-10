@@ -53,10 +53,16 @@ module.exports = {
         endpoints: {
           signUp: { url: '/users/sign_up' },
           login: { url: '/users/sign_in' },
-          logout: { url: '/users/sign_out', methods: 'delete' },
+          logout: { url: '/users/sign_out', method: 'delete' },
           user: { url: '/users/current' }
-        }
+        },
       }
+    },
+    redirect: {
+      login: '/users/auth',
+      logout: '/',
+      callback: '/users/auth',
+      home: '/'
     }
   },
   /*
