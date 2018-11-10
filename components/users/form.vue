@@ -39,7 +39,7 @@
           {{ signUp ? "Already have an acount?" : "Don't have an acount?" }}
           <a
             class="font-weight-bold"
-            @click="signUp = !signUp">
+            @click="changeForm">
             {{ signUp ? 'Login' : 'Sign Up' }}
           </a>
         </p>
@@ -56,12 +56,21 @@
       return {
         signUp: false,
         user: {
-          email: '',
-          password: ''
+          email: null,
+          password: null,
+          passwordConfimation: null
         }
       }
     },
     methods: {
+      changeForm() {
+        this.user = {
+          email: null,
+          password: null,
+          passwordConfimation: null
+        }
+        this.signUp = !this.signUp
+      },
       submitForm() {
         console.log(this.user)
         this.$emit('logUser', this.user)

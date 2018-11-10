@@ -10,31 +10,32 @@
       </v-toolbar-title>
     </v-toolbar>
 
-    <v-card-text>
-      <v-form>
+    <v-form @submit.prevent="submit">
+      <v-card-text>
 
         <v-text-field
           v-model="post.title"
           label="Title"/>
         <v-textarea
-          v-model="post.contetn"
+          v-model="post.content"
           label="Content" />
 
-      </v-form>
 
-      <v-card-actions>
+        <v-card-actions>
 
-        <v-spacer/>
+          <v-spacer/>
 
-        <v-btn
-          dark
-          color="pink">
-          Submit
-        </v-btn>
+          <v-btn
+            type="submit"
+            dark
+            color="pink">
+            Submit
+          </v-btn>
 
-      </v-card-actions>
+        </v-card-actions>
 
-    </v-card-text>
+      </v-card-text>
+    </v-form>
   </v-card>
 </template>
 <script>
@@ -49,6 +50,9 @@
       }
     },
     methods: {
+      submit() {
+        this.$emit('onSubmit', this.post)
+      }
     }
   };
 </script>

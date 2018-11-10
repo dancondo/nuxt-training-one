@@ -13,10 +13,12 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.0.0",
+    "@nuxtjs/auth": "^4.5.3",
+    "@nuxtjs/axios": "^5.3.6",
     "cross-env": "^5.2.0",
     "eslint": "^5.8.0",
     "nuxt": "^2.0.0",
+    "vue2-animate": "^2.1.0",
     "vuelidate": "^0.7.4",
     "vuetify": "^1.2.4"
   },

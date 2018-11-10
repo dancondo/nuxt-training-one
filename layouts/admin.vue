@@ -22,6 +22,7 @@
       sideMenu,
       appFooter
     },
+    middleware: 'auth',
     data() {
       return {
         items: [

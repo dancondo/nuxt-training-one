@@ -17,16 +17,13 @@
 </template>
 <script>
   import userForm from '~/components/users/form'
-  import axios from 'axios'
   export default {
     components: {
       userForm
     },
     methods: {
       startSession(user) {
-        console.log(user)
-        axios.post('http://localhost:8080/users/sign_in', user)
-          .then(response => console.log(response))
+        this.$store.dispatch('users/authenticateUser', { user: user })
       }
     }
   };

@@ -1,15 +1,21 @@
 export const state = () => ({
-
 });
 
-const getters = {
-
+export const getters = {
 };
 
-const mutations = {
-
+export const mutations = {
 };
 
-const actions = {
-
+export const actions = {
+  authenticateUser({ commit }, authData) {
+    if(authData.passwordConfimation) {
+      this.$auth.signUp(authData)
+        .catch(error => this.error = error + '')
+    } else {
+      console.log(authData)
+      this.$auth.login({data: { ...authData }})
+        .catch(error => this.error = error + '')
+    }
+  }
 };

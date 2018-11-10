@@ -8,7 +8,7 @@
     <v-flex
       xs12
       sm6>
-      <post-form/>
+      <post-form @onSubmit="savePost($event)"/>
 
     </v-flex>
   </v-layout>
@@ -18,6 +18,14 @@
   export default {
     components: {
       postForm
+    },
+    methods: {
+      savePost(postData) {
+        this.$axios.$post('/v1/posts/', postData)
+          .then(response => {
+            this.$router.push('admin/posts/' + response.id)
+          })
+      }
     }
   };
 </script>

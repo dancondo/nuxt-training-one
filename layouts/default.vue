@@ -25,7 +25,7 @@
     data() {
       return {
         items: [
-          { title: 'Account', link: '/users', icon: 'person' },
+          { title: 'Account', link: this.$auth.loggedIn ?  '/users' : '/users/auth', icon: 'person' },
           { title: 'Posts', link: '/posts', icon: 'list_alt' },
         ]
       }

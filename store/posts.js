@@ -1,10 +1,10 @@
 export const state = () => ({
-  post: 3
+  posts: 3
 });
 
 export const getters = {
-  getPost(state ) {
-    return state.post
+  getPosts(state ) {
+    return state.posts
   }
 };
 
@@ -13,5 +13,4 @@ export const mutations = {
 };
 
 export const actions = {
-
 };

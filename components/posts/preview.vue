@@ -11,15 +11,14 @@
 
       <v-card-title>
         <div>
-          <span class="grey--text">Number 10</span><br>
-          <span>Whitehaven Beach</span><br>
-          <span>Whitsunday Island, Whitsunday Islands</span>
+          <span class="grey--text">{{ post.title }}</span><br>
+          <span>{{ post.content }}</span><br>
         </div>
       </v-card-title>
       <v-card-actions>
         <v-btn
           :nuxt="true"
-          :to="'posts/' + id"
+          :to="'posts/' + post.id"
           flat
           color="orange"
         >
@@ -33,9 +32,9 @@
 <script>
   export default {
     props: {
-      id: {
-        type: Number,
-        default: 0
+      post: {
+        type: Object,
+        default: null
       }
     }
   };

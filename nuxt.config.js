@@ -7,11 +7,11 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    title: 'Nuxt Blog',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: 'The testing blog of Nuxt on Rails' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -35,7 +35,8 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/vuetify'
+    '@/plugins/vuetify',
+    '@/plugins/posts'
   ],
 
   /*
@@ -43,13 +44,28 @@ module.exports = {
   */
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/auth'
   ],
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          signUp: { url: '/users/sign_up' },
+          login: { url: '/users/sign_in' },
+          logout: { url: '/users/sign_out', methods: 'delete' },
+          user: { url: '/users/current' }
+        }
+      }
+    }
+  },
   /*
   ** Axios module configuration
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+    baseURL: process.env.BASE_URL || 'http://localhost:8080/api/',
+    credentials: false
   },
 
   /*
@@ -70,5 +86,13 @@ module.exports = {
         })
       }
     }
+  },
+
+  env: {
+  },
+
+  transition: {
+    name: 'v-fade-transition',
+    mode: 'out-in'
   }
 }

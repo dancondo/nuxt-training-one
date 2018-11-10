@@ -7,9 +7,9 @@
         wrap
       >
         <post-preview
-          v-for="n in 3"
-          :id="n"
-          :key="n"
+          v-for="post in posts"
+          :post="post"
+          :key="post.id"
         />
       </v-layout>
     </v-container>
@@ -24,6 +24,13 @@ export default {
   components: {
     banner,
     postPreview
+  },
+  asyncData(context) {
+    return context.$axios.get('v1/posts/home')
+      .then(response => {
+        return { posts: response.data.posts }
+      })
+      .catch(e => context.error(e))
   }
 };
 </script>

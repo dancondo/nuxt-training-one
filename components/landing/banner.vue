@@ -30,7 +30,7 @@
   export default {
     data() {
       return {
-        background: require('~/assets/banner.jpg')
+        background: require('@/assets/banner.jpg')
       }
     }
   };

@@ -6,24 +6,28 @@
       wrap>
 
       <post-preview
-        v-for="n in posts"
-        :id="n"
-        :key="n"/>
+        v-for="post in posts"
+        :post="post"
+        :key="post.id"
+      />
 
     </v-layout>
   </div>
 </template>
 
 <script>
-  import postPreview from '~/components/posts/preview'
   export default {
-    components: {
-      postPreview
-    },
-    computed: {
-      posts() {
-        return this.$store.getters['posts/getPost']
-      }
+    asyncData(context) {
+      return context.$axios.get('v1/posts')
+        .then(response => {
+          return { posts: response.data.posts }
+        })
+        .catch(e => context.error(e))
+      ;
     }
   };
 </script>
+
+<style>
+
+</style>

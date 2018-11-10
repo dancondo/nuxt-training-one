@@ -12,6 +12,9 @@
           title: 'Bowling'
         }
       })
+    },
+    head: {
+      title: 'A Blog Post'
     }
   };
 </script>
